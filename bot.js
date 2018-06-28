@@ -1,6 +1,5 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const config = require("./config.json");
 
 var quotes = [];
 
@@ -26,10 +25,10 @@ client.on("ready", () => {
 	
 	console.log('Bot initialized');
 	
-	retrieveQuotes();
+	// retrieveQuotes();
 	
 	client.user.setUsername("Weiberreisser");
-	client.user.setActivity('against Embrace');
+	client.user.setActivity('against Embrace', {type: 'PLAYING'});
 	
 });
 
@@ -42,7 +41,7 @@ client.on("message", async message => {
 	const command = args.shift().toLowerCase();
 	
 	if (command === "backup") {
-		message.channel.send(returnRandomQuote());
+		// message.channel.send(returnRandomQuote());
 	}
 	
 });
